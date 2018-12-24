@@ -5,11 +5,9 @@ class EventFetch extends WpFetch {
 
 		element.addEventListener(event, e => {
 			e.preventDefault()
-			if (!this.handler ||
-				(this.handler && this.handler())
-			) return this.fetch()
+			if (this.handler && !this.handler()) return
 
-			if (this.cancel) this.cancel()
+			this.fetch()
 		})
 	}
 }
