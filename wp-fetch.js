@@ -26,9 +26,10 @@ class WpFetch {
 	}
 
 	fetch() {
-		this.init.body = Object.entries(this.body).map(
-			([key, val]) => `${encodeURIComponent(key)}=${encodeURIComponent(val)}`
-		).join('&') + encodeURI(`&${JSON.stringify(this.data)}`)
+		const data = JSON.stringify(this.data)
+		const body = Object.entries(this.body).map((i) => i.map(i => encodeURIComponent(i)).join('=')).join('&')
+
+		this.init.body = `${body}&data=${data}`
 
 		fetch(this.url, this.init)
 			.then(this.check)
