@@ -1,5 +1,6 @@
 class WpFetch {
-	constructor(data, fetch = true) {
+	constructor(body = {}, data = {}, fetch = true) {
+		this.body = body
 		this.data = data
 		this.url = '/wp-admin/admin-ajax.php?'
 		this.init = {
@@ -28,10 +29,6 @@ class WpFetch {
 		this.init.body = Object.entries(this.body).map(
 			([key, val]) => `${encodeURIComponent(key)}=${encodeURIComponent(val)}`
 		).join('&') + encodeURI(`&${JSON.stringify(this.data)}`)
-
-		this.init.body = Object.entries(this.data).map(
-			([key, val]) => `${encodeURIComponent(key)}=${encodeURIComponent(val)}`
-		).join('&')
 
 		fetch(this.url, this.init)
 			.then(this.check)
