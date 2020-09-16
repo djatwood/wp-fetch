@@ -13,7 +13,7 @@ export function WPFetch(init, host = "") {
 
 export function objToURL(obj) {
 	let list = []
-	for (const k in Object.keys(obj)) {
+	for (const k of Object.keys(obj)) {
 		key = encodeURIComponent(k)
 		value = encodeURIComponent(obj[k])
 		list.push(`${key}=${value}`)
