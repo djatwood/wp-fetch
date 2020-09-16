@@ -1,6 +1,6 @@
 # WP Fetch
 
-A wrapper for [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that includes all the nessesary setup for request to [WordPress AJAX](https://codex.wordpress.org/AJAX_in_Plugins).
+A wrapper for [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that includes all the nessesary setup for a request to [WordPress AJAX](https://codex.wordpress.org/AJAX_in_Plugins).
 
 ## Example
 ```js
