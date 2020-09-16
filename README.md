@@ -14,3 +14,8 @@ WPFetch(init)
     .then(console.log)
     .catch(console.error)
 ```
+
+If you need to send data to another site you can supply a host using the second parameter.
+```js
+WPFetch(init, "https://mysite.com")
+```
